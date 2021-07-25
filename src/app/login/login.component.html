@@ -1,0 +1,17 @@
+<div class ="card" >
+    <h2 class="title">Login Here
+    </h2>
+<form [formGroup]="loginform" (ngSubmit)="submitForm()">
+  
+    <hr>
+    <label>Email</label>
+    <input formControlName="email" type="text" class="detail">
+
+    <label >Password</label>
+    <input  formControlName="password" class="detail" type="password">
+
+    
+    <span><input type="checkbox"> Remember Me</span>
+    <button style="color: rgb(240, 255, 240);">Submit</button>
+</form>
+</div>

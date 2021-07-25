@@ -1,0 +1,102 @@
+
+<!-- <h1>side_title:{{side_title}}</h1> -->
+ <!-- <h1>45679 is {{checkEven(45679)}}</h1> -->
+ <!-- <img [src]="imgUrl" alt=""> -->
+ <div class="col-md-8 mx-auto">
+    <div class="card mt-5">
+    <div class="card-body">
+        <form [formGroup]="PaperDetails" (ngSubmit)="submitForm()" >
+            <h2 class="text-cener">Registration Page</h2>
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>
+                Title
+              </mat-label>
+              <input type="text" formControlName="title" matInput>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>
+                Descrption
+              </mat-label>
+              <textarea type="text" formControlName="description" matInput>
+                </textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>
+                course
+              </mat-label>
+              <input type="text" formControlName="course" matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>
+              max_marks
+              </mat-label>
+              <input type="text" formControlName="max_marks" matInput>
+            </mat-form-field>
+            <!-- <label class="mt-5">Fullname</label>
+            <input type="text" class="form-control" formControlName="fullname">
+
+
+
+            <label class="mt-5">Email</label>
+            <input type="email" class="form-control"formControlName="email">
+
+            <label class="mt-5">Password</label>
+            <input type="password" class="form-control"formControlName="password">
+      -->
+     
+         
+
+     
+     
+     
+            <button class =" mt-5 btn btn-success w-100">Submit</button>
+        </form>
+
+
+
+
+    </div>
+</div>
+
+
+  <div class="mt-4" *ngFor="let question of QuestionPaper.questions;let i = index">
+    <div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Question {{i+1}}:</mat-label>
+            <input type="text" [(ngModel)]="question.name" matInput>
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Answer Type</mat-label>
+            <mat-select [(ngModel)]="question.answertype" (selectionChange)="setOptions($event, i)">
+              <mat-option *ngFor="let type of questionTypes" [value]="type">
+                {{type}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+<div class="option" *ngIf="question.answertype != questionTypes[0]">
+        <mat-form-field appearance="fill" class="d-block w-50" *ngFor="let option of question.options;let oi = index">
+          <mat-label>Option {{oi+1}}:</mat-label>
+          <input type="text" [(ngModel)]="option.text" matInput>
+        </mat-form-field>
+        <button nbButton class="mt-2" (click)="addOption(i)">Add New</button>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+          
+
+</div>

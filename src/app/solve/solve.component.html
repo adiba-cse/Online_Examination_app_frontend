@@ -1,3 +1,35 @@
-<div class="col-md-10 mx-auto" *ngIf="paperData" >
+<div class="col-md-10 mx-auto" *ngIf="paperData">
 
+
+
+
+
+
+    <div *ngFor="let question of paperData.data.questions;let i = index">
+        <p style="font-size: 1.3em;" class="question mt-4"><b>{{i+1}}. </b>{{question.name}}</p>
+        <div *ngIf="question.answertype == 'text'">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Your Answer</mat-label>
+                <input type="text" matInput [(ngModel)]="question.answer">
+            </mat-form-field>
+        </div>
+        <div *ngIf="question.answertype == 'radio'">
+
+            <mat-radio-group class="" [(ngModel)]="question.answer">
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let option of question.options">
+                        <mat-radio-button class="" [value]="option.text">
+                            {{option.text}}
+
+                        </mat-radio-button>
+                    </div>
+                </div>
+
+            </mat-radio-group>
+        </div>
+        <div *ngIf="question.answertype == 'checkbox'">
+            <mat-checkbox class="" *ngFor="let option of question.options" [(ngModel)]="question.answer">{{option.text}}
+            </mat-checkbox>
+        </div>
+    </div>
 </div>

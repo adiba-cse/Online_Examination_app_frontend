@@ -5,7 +5,9 @@
         <div class="card" *ngFor="let paper of paperList"> 
             <div class="card-body">
  <h1>{{paper["title"]}}</h1>
- <p>{{paper["course"]}}</p>
+ <p> Paper Name: {{paper["course"]}}   </p>
+ <p> Maximum Marks: {{paper["max_marks"]}}   </p>
+ <a [routerLink]="['/solve',paper['_id']]" target="_blank" >View Paper</a>
             </div>
         </div>
     </div>

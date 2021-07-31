@@ -1,8 +1,11 @@
-<div class="col-md-10 mx -auto">
+<div class="col-md-10 mx-auto">
+    <div class="user-info">
+
+    </div>
     <h1>Manage Papers</h1>
     <hr>
-    <div>
-        <div class="card" *ngFor="let paper of paperList"> 
+    <div class="my-card">
+        <div class="card paper-item" *ngFor="let paper of paperList"> 
             <div class="card-body">
  <h1>{{paper["title"]}}</h1>
  <p> Paper Name: {{paper["course"]}}   </p>

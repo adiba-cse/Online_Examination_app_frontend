@@ -17,6 +17,11 @@ export class ManagePapersComponent implements OnInit {
   ngOnInit(): void { 
     this.CurrentUser=JSON.parse(sessionStorage.getItem('user') as string)
    this.fetchPapers();
+   document.body.classList.add('manage-paper');
+
+  }
+  ngOnDestroy(){
+    document.body.classList.remove('manage-paper');
 
   }
 

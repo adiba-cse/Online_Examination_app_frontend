@@ -1,4 +1,4 @@
-<div class="col-md-10 mx-auto">
+!<div class="col-md-10 mx-auto">
     <div class="user-info">
 
     </div>
@@ -10,6 +10,8 @@
  <h1>{{paper["title"]}}</h1>
  <p> Paper Name: {{paper["course"]}}   </p>
  <p> Maximum Marks: {{paper["max_marks"]}}   </p>
+
+ <!-- <p> &#128540;</p> -->
  <a [routerLink]="['/solve',paper['_id']]" target="_blank" >View Paper</a>
             </div>
         </div>
@@ -17,3 +19,18 @@
 
 
 </div>
+<!-- <!DOCTYPE html>
+<html>
+<style>
+body {
+  font-size: 20px;
+}
+</style>
+<body>
+
+<span style='font-size:100px;'>&#128515;</span>
+<p>I will display &#128515;</p>
+<p>I will display &#x1F603;</p>
+
+</body>
+</html> -->

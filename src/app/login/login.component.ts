@@ -16,6 +16,11 @@ import { UserService } from '../services/user.service';
   
     ngOnInit(): void {
       this.initForm();
+      document.body.classList.add('login-paper');
+    }
+    ngOnDestroy(){
+      document.body.classList.remove('login-paper');
+  
     }
   initForm()
   {this.loginform = this.fb.group({

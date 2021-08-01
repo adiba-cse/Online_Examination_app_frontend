@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.add-paper{
+    background: url(/assets/add_paper_image.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.login-paper{
+    background: url(/assets/unnamedimg.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.manage-paper{
+    background: url(/assets/third.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}

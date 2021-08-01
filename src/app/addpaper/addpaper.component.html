@@ -1,9 +1,23 @@
 
  <div class="col-md-8 mx-auto">
-    <div class="card mt-5">
-      <img class="card-img-top" src="https://th.bing.com/th/id/R.4ee6681864ae318edfbdfe209e8240bb?rik=h5AXj%2b1sH1%2bEOw&riu=http%3a%2f%2fpavbca.com%2fwalldb%2foriginal%2fc%2f4%2ff%2f386426.jpg&ehk=vDLQ291Sqav5YJyV66zDMoMo9K%2bERUVJkCuZVT6YDYM%3d&risl=&pid=ImgRaw">
+   <div style="padding: 1rem;">
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-success w-100"><h5><i class="fa fa-share" aria-hidden="true"></i></h5></button>
+      </div>
+    </div>
+   </div>
+   
+    <div class="card mt-5 " style="border-radius: 25px;">
+      <img class="card-img-top"  style="border-radius: 15px  15px  0 0;" src="/assets/Image1.jpeg">
     <div class="card-body" style="padding: 3rem;">
-        <form [formGroup]="PaperDetails" (ngSubmit)="submitForm()" >
+        <form [formGroup]="PaperDetails" >
             <h2 class="text-cener">Add New Question Paper</h2>
             <hr class="mb-5">
             <mat-form-field appearance="outline" class="w-100">
@@ -35,8 +49,6 @@
               </mat-label>
               <input type="text" formControlName="max_marks" matInput>
             </mat-form-field>
-     
-            <button class =" mt-5 btn btn-success w-100">Submit</button>
         </form>
 
 
@@ -45,8 +57,8 @@
     </div>
 </div>
 
-  <div class="card mt-5">
-    <div class="card-body" style="padding: 3rem;">
+  <div class="card mt-5" style="border-radius: 25px;">
+    <div class="card-body"  style="padding: 3rem;">
 
       <div class="mt-4" *ngFor="let question of QuestionPaper.questions;let i = index">
         <div>

@@ -28,6 +28,13 @@ questionTypes: any = ['text', 'radio', 'checkbox'];
   ngOnInit(): void { 
     this.CurrentUser=JSON.parse(sessionStorage.getItem('user') as string)
     this.initForm();
+
+    document.body.classList.add('add-paper');
+  }
+
+  ngOnDestroy(){
+    document.body.classList.remove('add-paper');
+
   }
 //   FormSubmit()
 // {console.log(this.PaperDetails.value);

@@ -30,4 +30,12 @@ export class PaperService {
     return this.http.get(this.url+'/paper/getbyid/'+id);
   
   }
+  deletepaperbyId(id:any)
+  {
+    return this.http.delete(this.url+'/paper/delete/'+id);
+  }
+
+  addSolution(id: any, data: any){
+    return this.http.put(this.url+'/paper/pushupdate/'+id, data);
+  }
 }

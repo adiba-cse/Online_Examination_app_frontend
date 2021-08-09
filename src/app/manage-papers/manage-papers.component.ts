@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { app_config } from '../config';
 import { PaperService } from '../services/paper.service';
 
@@ -11,6 +12,7 @@ import { PaperService } from '../services/paper.service';
 export class ManagePapersComponent implements OnInit {
   paperList=[];
   CurrentUser:any
+  showlink=false
   constructor(private paperService:PaperService) { }
 
  url=app_config.api_url;
@@ -32,6 +34,22 @@ fetchPapers(){
   console.log(this.paperList)
 })
 }
+togglelink()
+{
+  this.showlink=!this.showlink
+}
 
-
+deletepaper(id:any)
+{
+  this.paperService.deletepaperbyId(id) 
+  .subscribe((data:any)=>{
+    this.fetchPapers()
+    Swal.fire({
+      icon : 'warning',
+      title: 'Paper deleted',
+      text: 'Deleted successfully'
+    })
+  })
+  
+}
 }

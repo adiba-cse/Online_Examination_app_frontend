@@ -1,9 +1,92 @@
 <div class="col-md-10 mx-auto" *ngIf="paperData">
 
+    <h1 class="text-center">Solve Paper</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <b>Paper Name : </b>{{paperData.title}}
+                </div>
+                <div class="col-md-6">
+                    <b>Max Marks : </b>{{paperData.max_marks}}
+                </div>
+            </div>
+
+
+
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <b>Course : </b>{{paperData.course}}
+                </div>
+                <div class="col-md-6">
+                    <b>Description : </b>{{paperData.description}}
+                </div>
+            </div>
 
 
 
 
+            <div class="card mt-5">
+                
+                <div class="card-body">
+                    <h4>Student Details</h4>
+                <hr>
+                    <form [formGroup]="solutionForm" >
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100 mt-30" appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100 mt-30" appearance="outline">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput formControlName="name">
+                                </mat-form-field>
+                            </div>
+                        </div>
+            
+            
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100 mt-30" appearance="outline">
+                                    <mat-label>Course Name</mat-label>
+                                    <input matInput formControlName="course">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100 mt-30" appearance="outline">
+                                    <mat-label>Roll No.</mat-label>
+                                    <input matInput formControlName="roll_no">
+                                </mat-form-field>
+                            </div>
+                           
+                        </div>
+                    </form>
+
+
+
+        </div>
+    </div>
+
+    <!-- <form id="form" [formGroup]="loginform" (ngSubmit)="submitForm()">
+        <label class="form-input">
+          <i class="material-icons">person</i>
+          <input type="email" autofocus="true" required formControlName="email" />
+          <span class="label">Username</span>
+          <span class="underline"></span>
+        </label>
+        
+        <label class="form-input">
+          <i class="material-icons">lock</i>
+          <input type="password" required formControlName="password"/>
+          <span class="label">Password</span>
+          <div class="underline"></div>
+        </label>
+    </form> -->
 
     <div *ngFor="let question of paperData.data.questions;let i = index">
         <p style="font-size: 1.3em;" class="question mt-4"><b>{{i+1}}. </b>{{question.name}}</p>
@@ -31,5 +114,9 @@
             <mat-checkbox class="" *ngFor="let option of question.options" [(ngModel)]="question.answer">{{option.text}}
             </mat-checkbox>
         </div>
+    </div>
+    <button class="mt-5" mat-raised-button color="primary">Submit Paper</button>
+    </div>
+
     </div>
 </div>

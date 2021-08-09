@@ -1,19 +1,18 @@
 
  <div class="col-md-8 mx-auto">
-   <div style="padding: 1rem;">
-    <div class="row">
-      <div class="col-md-4">
-
-      </div>
-      <div class="col-md-4">
-
-      </div>
-      <div class="col-md-3">
-        <button class="btn btn-success w-100"><h5><i class="fa fa-share" aria-hidden="true"></i></h5></button>
-      </div>
-    </div>
-   </div>
-   
+  <mat-toolbar>
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    -->
+    <span>Add New Paper</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
     <div class="card mt-5 " style="border-radius: 25px;">
       <img class="card-img-top"  style="border-radius: 15px  15px  0 0;" src="/assets/Image1.jpeg">
     <div class="card-body" style="padding: 3rem;">
@@ -95,6 +94,9 @@
 
       
       <button (click)="addQuestion()" class =" mt-5 btn btn-success">Add New Question</button>
+      <br>
+      <button (click)="submitForm()" class="mt-5 " color="primary" mat-raised-button >SAVE</button>
+     
 
     </div>
   </div>

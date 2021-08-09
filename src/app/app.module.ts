@@ -19,6 +19,11 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { ViewsolutionComponent } from './viewsolution/viewsolution.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import { ResponseComponent } from './response/response.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +33,8 @@ import { ViewsolutionComponent } from './viewsolution/viewsolution.component';
     SolveComponent,
     ManagePapersComponent,
     HeaderComponent,
-    ViewsolutionComponent
+    ViewsolutionComponent,
+    ResponseComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +48,11 @@ import { ViewsolutionComponent } from './viewsolution/viewsolution.component';
      MatFormFieldModule,
      MatCheckboxModule,
      MatRadioModule,
-MatSelectModule
-,
+MatSelectModule,
+MatButtonModule,
+MatToolbarModule,
+MatIconModule,
+ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

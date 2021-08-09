@@ -41,6 +41,8 @@ import { UserService } from '../services/user.service';
       if(data.password ==formdata.password){
         console.log('login successfull');
       sessionStorage.setItem( 'user', JSON.stringify(data));
+
+this.userservice.currentUser=data;
       Swal.fire({
         icon : 'success',
         title: 'Hurray',

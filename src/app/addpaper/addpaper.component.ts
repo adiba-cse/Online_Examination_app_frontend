@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { PaperService } from '../services/paper.service';
 
 @Component({
@@ -103,6 +104,12 @@ submitForm() {
 
   this.paperService.addPaper(formdata).subscribe((data) => {
     console.log(data);
+    Swal.fire({
+      icon : 'success',
+      title: 'Hurray',
+      text: 'Saved Successfully'
+    })
+  
     // this.betaService
     //   .addPaperDetails(formdata.beta, data['_id'])
     //   .subscribe((data) => {
@@ -111,5 +118,8 @@ submitForm() {
 
   });
 }
+
+
+ 
 
 }

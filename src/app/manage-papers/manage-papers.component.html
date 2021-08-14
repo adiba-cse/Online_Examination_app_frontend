@@ -5,62 +5,70 @@
     <h1>Manage Papers</h1>
     <hr>
     <div class="my-card mt-5">
-        <div class="card paper-item" *ngFor="let paper of paperList"> 
+        <div class="card paper-item" *ngFor="let paper of paperList">
             <div class="card-body">
- <h1>{{paper["title"]}}</h1>
- <p> Paper Name: {{paper["course"]}}   </p>
- <p> Maximum Marks: {{paper["max_marks"]}}   </p>
+                <h1>{{paper["title"]}}</h1>
+                <p> Paper Name: {{paper["course"]}} </p>
+                <p> Maximum Marks: {{paper["max_marks"]}} </p>
 
- <!-- <p> &#128540;</p> -->
- 
- <a class="btn btn-primary" [routerLink]="['/solve',paper['_id']]" target="_blank" >View Paper</a>
- <div class="row">
-     <div class="col-2">
-        <button mat-icon-button class="example-icon"(click)="deletepaper(paper['_id'])" aria-label="Example icon-button with share icon">
-            <mat-icon>delete</mat-icon>
-          </button>
-     </div>
-     <div class="col-2">
-        <button mat-icon-button class="example-icon" (click)="togglelink()" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-          </button>
-          <div class="row" *ngIf="showlink">
-<div class="col">
-    <input  class="mt-3" [value]="'http://localhost:4200/solve/'+paper['_id']">
-</div>
-<div class="col">
-    <button mat-icon-button class="example-icon"  [cdkCopyToClipboard]="'http://localhost:4200/solve/'+paper['_id']" aria-label="Example icon-button with share icon">
-        <mat-icon>file_copy</mat-icon>
-      </button>
-</div>
-          </div>
-         
-         
-     </div>
-     <!-- <div class="col-2">
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-          </button>
-     </div> -->
- </div>
+                <!-- <p> &#128540;</p> -->
+
+                <a class="btn btn-primary" [routerLink]="['/solve',paper['_id']]" target="_blank">View Paper</a>
+                <button class="btn btn-danger" style="margin-left: 1rem;" (click)="deletepaper(paper['_id'])">
+                    <i class="fas fa-trash-alt    "></i>
+                </button>
+                <div class="row">
+                    <div class="col">
+                        <button mat-icon-button class="example-icon" (click)="togglelink()"
+                            aria-label="Example icon-button with share icon">
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <div class="input-group w-100 mt-3" *ngIf="showlink">
+                            <input type="text" class="form-control"
+                                [value]="'http://localhost:4200/solve/'+paper['_id']">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary"
+                                    [cdkCopyToClipboard]="'http://localhost:4200/solve/'+paper['_id']">
+                                    <mat-icon>file_copy</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <h3 class="mt-5">Responses</h3>
+                <div class="accordion" id="accordionExample">
+
+                    <div class="accordion-item" *ngFor="let answer of paper['answers']">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                {{answer['name']}}
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="card-body">
+                                    <p>Student Email : {{answer.email}}</p>
+                                    <p>Student Roll No. : {{answer.roll_no}}</p>
+                                </div>
+                                <ul class="list-group">
+                                    <li class="list-group-item"
+                                        *ngFor="let question of answer['data']['data']['questions'];let i = index;">
+                                        <p>{{i+1}}. {{question.name}}</p>
+                                        <strong>{{question.answer}}</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
 </div>
-<!-- <!DOCTYPE html>
-<html>
-<style>
-body {
-  font-size: 20px;
-}
-</style>
-<body>
-
-<span style='font-size:100px;'>&#128515;</span>
-<p>I will display &#128515;</p>
-<p>I will display &#x1F603;</p>
-
-</body>
-</html> -->

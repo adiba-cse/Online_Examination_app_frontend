@@ -40,7 +40,12 @@ export class SolveComponent implements OnInit {
     this.paperService.getPapersById(id).subscribe((data: any) => {
       console.log(data);
       this.paperData = data;
+      document.body.classList.add('solve-paper');
     });
+  }
+  ngOnDestroy(){
+    document.body.classList.remove('solve-paper');
+
   }
 
   submitPaper() {

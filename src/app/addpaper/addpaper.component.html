@@ -1,9 +1,9 @@
 <div class="col-md-8 mx-auto">
   <div class=" card mt-5 " style=" border-radius: 25px;">
-    <img class="card-img-top" style="border-radius: 15px  15px  0 0;" src="/assets/Image1.jpeg">
+    <img class="card-img-top" style="border-radius: 25px  25px  0 0;" src="/assets/newimg.jpg">
     <div class="card-body" style="padding: 3rem;">
       <form [formGroup]="PaperDetails">
-        <h2 class="text-cener">Add New Question Paper</h2>
+        <h2 class="text-cener" style="font-family: Comic Sans MS;">  <b> <i>Add New Question Paper</i>  </b> </h2>
         <hr class="mb-5">
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>
@@ -72,7 +72,7 @@
               <mat-label>Option {{oi+1}}:</mat-label>
               <input type="text" [(ngModel)]="option.text" matInput>
             </mat-form-field>
-            <button class=" mt-3 btn btn-success" (click)="addOption(i)">Add New</button>
+            <button class=" mt-3 btn btn-success" (click)="addOption(i)"  style="color: black; background-color: white; border-color:black;border-style: solid;"    >Add New</button>
           </div>
 
         </div>
@@ -80,11 +80,11 @@
       </div>
 
 
-      <button (click)="addQuestion()" class=" mt-5 btn btn-success">Add New Question</button>
+      <button (click)="addQuestion()" class=" mt-3 btn btn-success" style="color: black; background-color: white; border-color:black;border-style: solid;"   >Add New Question</button>
       <br>
-      <button (click)="submitForm()" class="mt-5 " color="primary" mat-raised-button>SAVE</button>
+      <button (click)="submitForm()" class="mt-4 "  mat-raised-button style="border-style: solid; border-color: black; background-color: rgba(253, 253, 255, 0.74);color: rgb(5, 5, 5);"  ><strong>SAVE</strong></button>
 
-
+     
     </div>
   </div>
 

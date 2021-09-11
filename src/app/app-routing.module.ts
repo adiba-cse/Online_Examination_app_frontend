@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddpaperComponent } from './addpaper/addpaper.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManagePapersComponent } from './manage-papers/manage-papers.component';
 import { RegisterComponent } from './register/register.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'addpaper', component: AddpaperComponent },
   { path: 'solve/:paperId', component: SolveComponent },
   { path: 'submitted', component: ResponseComponent },
+  {path:'home',component:HomeComponent}
 ];
 
 @NgModule({

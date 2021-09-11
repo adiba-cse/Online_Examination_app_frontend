@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  //side_title:any="My website";
+  
 
   registerForm: any;
 
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.side_title);
+   
     this.initForm();
   }
 
@@ -46,5 +46,11 @@ export class RegisterComponent implements OnInit {
       email: '',
       password: '',
     });
+    document.body.classList.add('register-paper');
+  }
+  ngOnDestroy(){
+    document.body.classList.remove('register-paper');
+
   }
 }
+

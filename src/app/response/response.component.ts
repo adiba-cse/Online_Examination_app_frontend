@@ -9,7 +9,11 @@ export class ResponseComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {document.body.classList.add('view-paper');
+  }
+  ngOnDestroy(){
+    document.body.classList.remove('view-paper');
+
   }
 
 }

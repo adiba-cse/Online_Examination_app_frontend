@@ -2,20 +2,23 @@
     <div class="user-info">
 
     </div>
-    <h1>Manage Papers</h1>
-    <hr>
-    <div class="my-card mt-5">
+   
+    
+    <div class="my-card mt-3">
         <div class="card paper-item" *ngFor="let paper of paperList">
             <div class="card-body">
+            <h2  style="font-family: Comic Sans MS;margin-left: 35%;"><i><b>Manage Papers</b></i></h2>
+                <hr>
+               
                 <h1>{{paper["title"]}}</h1>
-                <p> Paper Name: {{paper["course"]}} </p>
-                <p> Maximum Marks: {{paper["max_marks"]}} </p>
+                <p><b> Paper Name: {{paper["course"]}}</b> </p>
+                <p> <b>Maximum Marks: {{paper["max_marks"]}} </b></p>
 
                 <!-- <p> &#128540;</p> -->
 
-                <a class="btn btn-primary" [routerLink]="['/solve',paper['_id']]" target="_blank">View Paper</a>
-                <button class="btn btn-danger" style="margin-left: 1rem;" (click)="deletepaper(paper['_id'])">
-                    <i class="fas fa-trash-alt    "></i>
+              <a class="btn btn-primary" [routerLink]="['/solve',paper['_id']]" target="_blank" style="color: black; background-color: white; border-color:black;border-style: solid;">View Paper</a>
+                <button class="btn btn-danger" style="margin-left: 1rem;background-color: white;color: black;border-color: black;" (click)="deletepaper(paper['_id'])">
+                    <i class="fas fa-trash-alt   " ></i>  
                 </button>
                 <div class="row">
                     <div class="col">
@@ -26,7 +29,7 @@
                         <div class="input-group w-100 mt-3" *ngIf="showlink">
                             <input type="text" class="form-control"
                                 [value]="'http://localhost:4200/solve/'+paper['_id']">
-                            <div class="input-group-append">
+                            <div class="input-group-appe`nd">
                                 <button class="btn btn-secondary"
                                     [cdkCopyToClipboard]="'http://localhost:4200/solve/'+paper['_id']">
                                     <mat-icon>file_copy</mat-icon>
@@ -38,7 +41,7 @@
                     </div>
                 </div>
 
-                <h3 class="mt-5">Responses</h3>
+                <h3 class="mt-2"  style="font-family: Comic Sans MS;"><i><b>Responses</b></i></h3>
                 <div class="accordion" id="accordionExample">
 
                     <div class="accordion-item" *ngFor="let answer of paper['answers']">
@@ -52,8 +55,8 @@
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="card-body">
-                                    <p>Student Email : {{answer.email}}</p>
-                                    <p>Student Roll No. : {{answer.roll_no}}</p>
+                                 <b>  <p>Student Email : {{answer.email}}</p>
+                                    <p>Student Roll No. : {{answer.roll_no}}</p> </b> 
                                 </div>
                                 <ul class="list-group">
                                     <li class="list-group-item"

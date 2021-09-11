@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { PaperService } from '../services/paper.service';
 
@@ -24,7 +25,7 @@ export class AddpaperComponent implements OnInit {
   };
   questionTypes: any = ['text', 'radio', 'checkbox'];
 
-  constructor(private fb: FormBuilder, private paperService: PaperService) {}
+  constructor(private fb: FormBuilder, private paperService: PaperService,private router: Router) {}
 
   ngOnInit(): void {
     this.CurrentUser = JSON.parse(sessionStorage.getItem('user') as string);
@@ -79,14 +80,7 @@ export class AddpaperComponent implements OnInit {
     this.QuestionPaper.questions[index]['options'].push({ text: '' });
   }
 
-  // this.paperService.addPaper(formdata).subscribe((data) => {
-  // console.log(data);
-  //  this.betaService
-  // .addQuestionPaper(formdata.beta, data['_id'])
-  // .subscribe((data) => {
-  //console.log(data);
-  //  });
-  // });}
+ 
 
   submitForm() {
     let formdata = this.PaperDetails.value;
@@ -101,12 +95,8 @@ export class AddpaperComponent implements OnInit {
         title: 'Hurray',
         text: 'Saved Successfully',
       });
-
-      // this.betaService
-      //   .addPaperDetails(formdata.beta, data['_id'])
-      //   .subscribe((data) => {
-      //     console.log(data);
-      //   });
+    
     });
+    this.router.navigate(['/managepaper']);
   }
 }

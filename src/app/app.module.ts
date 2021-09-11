@@ -24,6 +24,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { ResponseComponent } from './response/response.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { ResponseComponent } from './response/response.component';
     ManagePapersComponent,
     HeaderComponent,
     ViewsolutionComponent,
-    ResponseComponent
+    ResponseComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

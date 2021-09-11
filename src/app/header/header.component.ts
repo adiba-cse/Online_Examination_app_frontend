@@ -12,14 +12,18 @@ export class HeaderComponent implements OnInit {
   constructor(public userservice:UserService, private router:Router) { }
 
   ngOnInit(): void {
+    document.body.classList.add('home');
   }
+  ngOnDestroy(){
+    document.body.classList.remove('home');
 
+  }
 
 logout()
 {
-  sessionStorage.removeitem('user')
+  sessionStorage.removeItem('user')
   this.router.navigate(['/login'])
-  UserService.currentuser=null
+  this.userservice.currentUser=null
   
 }
 

@@ -12,13 +12,12 @@
         
 
         <li class="nav-item" *ngIf="userservice.currentUser">
-          <a class="nav-link" aria-current="page" [routerLink]="['/addpaper']" routerLinkActive="active" style="font-size: 95%;">ADD
-           PAPER</a>
+          <a class="nav-link" aria-current="page" [routerLink]="['/addpaper']" routerLinkActive="active" style="font-size: 95%;">CREATE</a>
         </li>
         
 
         <li class="nav-item" *ngIf="userservice.currentUser">
-          <a class="nav-link" aria-current="page" [routerLink]="['/managepaper']" routerLinkActive="active" style="font-size: 95%;">MANAGE PAPERS</a>
+          <a class="nav-link" aria-current="page" [routerLink]="['/managepaper']" routerLinkActive="active" style="font-size: 95%;">HISTORY</a>
         </li>
         <li class="nav-item" *ngIf="!userservice.currentUser">
           <a class="nav-link" aria-current="page" [routerLink]="['/register']" routerLinkActive="active" style="font-size: 95%;">SIGN UP</a>

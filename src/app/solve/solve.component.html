@@ -86,13 +86,12 @@
                     </mat-radio-group>
                 </div>
                 <div *ngIf="question.answertype == 'checkbox'">
-                    <mat-checkbox class="" *ngFor="let option of question.options" [(ngModel)]="question.answer">
+                    <mat-checkbox class="" *ngFor="let option of question.options" (change)="setOption(i, option.text)">
                         {{option.text}}
                     </mat-checkbox>
                 </div>
             </div>
             <button class="mt-5" mat-raised-button color=white style="border-color: black;border-style: solid;" (click)="submitPaper()">Submit Paper</button>
         </div>
-
     </div>
 </div>

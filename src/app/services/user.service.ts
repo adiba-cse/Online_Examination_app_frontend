@@ -13,9 +13,6 @@ export class UserService {
 
   currentUser:any
   static currentuser: null;
-
-
-
   constructor(private http:HttpClient) { 
     
     let user=sessionStorage.getItem('user')
@@ -24,10 +21,8 @@ export class UserService {
       this.currentUser=JSON.parse(user);
     }
   }
-
 addUser(data:any):Observable<any>{
   return this.http.post(this.url+'/user/add',data);
-
 }
 getUserByEmail(email:any):Observable<any>
 {

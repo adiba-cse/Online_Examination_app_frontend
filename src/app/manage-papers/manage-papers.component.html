@@ -3,7 +3,7 @@
 
     </div>
    
-    
+   
     <div class="my-card mt-3">
         <div class="card paper-item" *ngFor="let paper of paperList">
             <div class="card-body">
@@ -14,7 +14,7 @@
                 <p><b> Paper Name: {{paper["course"]}}</b> </p>
                 <p> <b>Maximum Marks: {{paper["max_marks"]}} </b></p>
 
-                <!-- <p> &#128540;</p> -->
+                
 
               <a class="btn btn-primary" [routerLink]="['/solve',paper['_id']]" target="_blank" style="color: black; background-color: white; border-color:black;border-style: solid;">View Paper</a>
                 <button class="btn btn-danger" style="margin-left: 1rem;background-color: white;color: black;border-color: black;" (click)="deletepaper(paper['_id'])">
@@ -44,14 +44,14 @@
                 <h3 class="mt-2"  style="font-family: Comic Sans MS;"><i><b>Responses</b></i></h3>
                 <div class="accordion" id="accordionExample">
 
-                    <div class="accordion-item" *ngFor="let answer of paper['answers']">
+                    <div class="accordion-item" *ngFor="let answer of paper['answers'];let i=index;">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                [attr.data-bs-target]="'#question'+i" aria-expanded="false" aria-controls="collapseTwo">
                                 {{answer['name']}}
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        <div [id]="'#question'+i" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="card-body">

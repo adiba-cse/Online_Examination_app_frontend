@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'addpaper', component: AddpaperComponent },
   { path: 'solve/:paperId', component: SolveComponent },
   { path: 'submitted', component: ResponseComponent },
-  {path:'home',component:HomeComponent}
+  {path:'home',component:HomeComponent},
+  {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
 
 @NgModule({

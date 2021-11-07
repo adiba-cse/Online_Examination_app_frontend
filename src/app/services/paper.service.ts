@@ -2,20 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { app_config } from '../config';
-
 @Injectable({
   providedIn: 'root'
 })
 export class PaperService {
-
-  
-
   url=app_config.api_url;
-
-
-
-
-
   constructor(private http:HttpClient) { }
 
   addPaper(data:any):Observable<any>{

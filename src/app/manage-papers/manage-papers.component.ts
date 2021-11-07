@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { app_config } from '../config';
@@ -48,8 +49,13 @@ deletepaper(id:any)
       icon : 'warning',
       title: 'Paper deleted',
       text: 'Deleted successfully'
-    })
-  })
+    }
+    )
+   
+  }
+
   
+  )
+ 
 }
 }

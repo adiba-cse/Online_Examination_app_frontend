@@ -1,7 +1,4 @@
 <div class="col-md-10 mx-auto" *ngIf="paperData">
-
-    
-
     <div class="card mt-5" style="background-color: rgb(255, 255, 255);">
         <div class="card-body ">
             <h1 class="text-center"  style="font-family: Comic Sans MS;" ><i><b>Solve Paper</b></i>
@@ -18,8 +15,6 @@
                 </div>
             </div>
 
-
-
             <div class="row mt-5" >
                 <div class="col-md-6">
                     <b>Course : </b>{{paperData.course}}
@@ -28,9 +23,6 @@
                     <b>Description : </b>{{paperData.description}}
                 </div>
             </div>
-
-
-
 
             <div class="card mt-5"  style="background-color: rgba(255, 255, 255, 0);">
 
@@ -53,8 +45,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="row">
                             <div class="col-md-6">
                                 <mat-form-field class="w-100 mt-30" appearance="outline">
@@ -71,13 +61,8 @@
 
                         </div>
                     </form>
-
-
-
                 </div>
-            </div>
-
-   
+            </div>  
             <div *ngFor="let question of paperData.data.questions;let i = index">
                 <p style="font-size: 1.3em;" class="question mt-4"><b>{{i+1}}. </b>{{question.name}}</p>
                 <div *ngIf="question.answertype == 'text'">

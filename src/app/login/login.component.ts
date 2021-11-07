@@ -7,7 +7,7 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css', '../../../login.css'],
+  styleUrls: ['./login.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 

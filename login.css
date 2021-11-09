@@ -24,9 +24,7 @@
       margin-bottom: 0.5rem;
     }
     
-    /**
-     * Tiles
-     */
+    
     .tile {
       background-color: #ffffff;
       border-radius: 0.1rem;
@@ -34,8 +32,7 @@
       position: relative;
       width: 100%;
       margin-top: 7rem;
-      /* min-width: 320px; */
-      /* max-width: 24rem; */
+    
       overflow: hidden;
     }
     .tile .tile-header {
@@ -47,10 +44,6 @@
     .tile .tile-body {
       padding: 2rem;
     }
-    
-    /**
-     * Forms
-     */
     .form-input {
       display: block;
       position: relative;
@@ -111,10 +104,6 @@
       top: 0;
       font-size: 0.85rem;
     }
-    
-    /**
-     * Buttons
-     */
     .btn {
       border-radius: 0.2rem;
       display: inline-block;
@@ -185,10 +174,6 @@
     .btn-base:hover, .btn-base:focus, .btn-base:active {
       background-color: #393a3c;
     }
-    
-    /**
-     * Utilities
-     */
     .clearfix:after {
       content: "";
       display: table;
@@ -198,10 +183,6 @@
     .float-right {
       float: right;
     }
-    
-    /**
-     *
-     */
     .submit-container {
       position: relative;
     }

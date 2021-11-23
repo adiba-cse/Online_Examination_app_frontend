@@ -1,36 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-
-.add-paper{
-    background: url(/assets/all.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+.add-paper {
+  background: url(/assets/all.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.login-paper{
-    background: url(/assets/all.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+.login-paper {
+  background: url(/assets/all.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.manage-paper{
-    background: url(/assets/all.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+.manage-paper {
+  background: url(/assets/all.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.solve-paper{
-    background: url(/assets/all.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+.solve-paper {
+  background: url(/assets/all.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.register-paper{
-    background: url(/assets/all.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+.register-paper {
+  background: url(/assets/all.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.view-paper{
-    background: url(/assets/all.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+.view-paper {
+  background: url(/assets/all.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }

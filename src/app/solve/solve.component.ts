@@ -66,4 +66,16 @@ export class SolveComponent implements OnInit {
         });
     });
   }
+
+  setOption(q_i: any, ans:any){
+    if(!this.paperData.data.questions[q_i].answer){
+      this.paperData.data.questions[q_i].answer = [];
+    }
+    if (!this.paperData.data.questions[q_i].answer.includes(ans)){
+      this.paperData.data.questions[q_i].answer.push(ans);
+    }else{
+      this.paperData.data.questions[q_i].answer.splice(this.paperData.data.questions[q_i].answer.indexOf(ans), 1);
+    }
+    console.log(this.paperData.data.questions[q_i].answer);
+  }
 }
